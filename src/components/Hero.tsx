@@ -8,63 +8,67 @@ export default function Hero() {
 
   return (
     <section id="hero" className={styles.hero}>
-      <div className={styles.bgText} aria-hidden="true">GRÜN</div>
+      {/* Subtle grid texture */}
+      <div className={styles.gridOverlay} aria-hidden="true" />
 
-      <svg className={styles.leaf} viewBox="0 0 280 280" fill="none" aria-hidden="true">
-        <path d="M140 18C250 18 275 105 255 195C232 278 62 295 30 208C0 128 40 18 140 18Z" fill="white"/>
-        <path d="M140 18C136 90 138 180 142 275" stroke="white" strokeWidth="2.5" fill="none"/>
-        <path d="M142 75C178 93 215 118 244 148" stroke="white" strokeWidth="1.5" fill="none"/>
-        <path d="M141 120C172 137 200 157 222 182" stroke="white" strokeWidth="1.5" fill="none"/>
-        <path d="M141 75C110 96 80 122 56 152" stroke="white" strokeWidth="1.5" fill="none"/>
-        <path d="M141 128C116 148 90 168 70 196" stroke="white" strokeWidth="1.5" fill="none"/>
-      </svg>
+      {/* Dekoratif büyük arka plan yazısı */}
+      <div className={styles.bgText} aria-hidden="true">WIEN</div>
 
       <div className={styles.inner}>
-        <p className={styles.eyebrow}>Professionelle Gartenpflege · Wien</p>
+        <div className={styles.eyebrowRow}>
+          <span className={styles.dot} aria-hidden="true" />
+          <p className={styles.eyebrow}>Professionelle Gartenpflege · Wien, Österreich</p>
+        </div>
 
         <h1 className={styles.title}>
-          Ihr Garten in<br />
-          <em className={styles.titleEm}>besten Händen.</em>
+          Ihr Garten.<br />
+          <span className={styles.titleAccent}>Unsere Leidenschaft.</span>
         </h1>
 
         <p className={styles.sub}>
-          Zuverlässige Grünflächenpflege, Reinigung und Grabpflege in Wien —
-          nachhaltig, sorgfältig und termingerecht.
+          Rasenmähen, Bewässerung, Grabpflege und Grünflächenreinigung —
+          termingerecht, sorgfältig und zu fairen Preisen.
         </p>
 
         <div className={styles.actions}>
           <button onClick={() => scrollTo('#kontakt')} className={styles.btnPrimary}>
-            Jetzt Kontakt aufnehmen
+            Kostenloses Angebot
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <line x1="5" y1="12" x2="19" y2="12"/>
               <polyline points="12 5 19 12 12 19"/>
             </svg>
           </button>
-          <button onClick={() => scrollTo('#leistungen')} className={styles.btnOutline}>
-            Unsere Leistungen
+          <button onClick={() => scrollTo('#leistungen')} className={styles.btnGhost}>
+            Leistungen ansehen
           </button>
         </div>
 
-        <div className={styles.stats}>
-          <div>
-            <div className={styles.statNum}>Wien</div>
-            <div className={styles.statLbl}>Einsatzgebiet</div>
+        <div className={styles.trust}>
+          <div className={styles.trustItem}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8FAF7E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Rechtlich zugelassen</span>
           </div>
-          <div>
-            <div className={styles.statNum}>8+</div>
-            <div className={styles.statLbl}>Leistungen</div>
+          <div className={styles.trustItem}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8FAF7E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Faire Festpreise</span>
           </div>
-          <div>
-            <div className={styles.statNum}>100%</div>
-            <div className={styles.statLbl}>Rechtl. zugelassen</div>
+          <div className={styles.trustItem}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8FAF7E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Schnelle Terminvergabe</span>
           </div>
         </div>
       </div>
 
-      <div className={styles.scrollHint} aria-hidden="true">
-        <span>Mehr entdecken</span>
-        <div className={styles.scrollDot} />
-      </div>
+      {/* Scroll-Indikator */}
+      <button
+        className={styles.scrollBtn}
+        onClick={() => scrollTo('#leistungen')}
+        aria-label="Nach unten scrollen"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
     </section>
   )
 }
