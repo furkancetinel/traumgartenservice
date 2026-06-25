@@ -2,54 +2,30 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-:root {
-  --green-dark:  #1C3A2B;
-  --green-mid:   #2E5C42;
-  --green-sage:  #8FAF7E;
-  --green-light: #C8DDB8;
-  --white:       #FFFFFF;
-  --text-dark:   #141414;
-  --text-muted:  #5A6355;
-}
-
 html { scroll-behavior: smooth; }
 body {
   font-family: 'Poppins', sans-serif;
   background: #fff;
-  color: var(--text-dark);
+  color: #141414;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   font-size: 16px;
 }
 
-/* Scroll reveal — başlangıç */
 .reveal {
-  opacity: 0;
-  transform: translateY(32px);
+  opacity: 0; transform: translateY(32px);
   transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
-/* Slide-from-left */
 .reveal-left {
-  opacity: 0;
-  transform: translateX(-40px);
+  opacity: 0; transform: translateX(-44px);
   transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1);
 }
 .reveal-left.visible { opacity: 1; transform: translateX(0); }
 
-/* Slide-from-right */
 .reveal-right {
-  opacity: 0;
-  transform: translateX(40px);
+  opacity: 0; transform: translateX(44px);
   transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1);
 }
 .reveal-right.visible { opacity: 1; transform: translateX(0); }
-
-/* Scale-in */
-.reveal-scale {
-  opacity: 0;
-  transform: scale(0.92);
-  transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
-}
-.reveal-scale.visible { opacity: 1; transform: scale(1); }

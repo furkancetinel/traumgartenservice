@@ -4,49 +4,34 @@
 .title { font-size: clamp(28px, 3.5vw, 46px); font-weight: 700; color: #141414; line-height: 1.1; letter-spacing: -1px; margin-bottom: 14px; }
 .sub { font-size: 15px; font-weight: 300; color: #5A6355; max-width: 480px; line-height: 1.7; }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 
 .card {
-  background: #fff;
-  border: 1px solid #ebebeb;
-  border-radius: 4px;
-  overflow: hidden;
-  transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s, border-color 0.3s;
+  background: #fff; border: 1px solid #ebebeb; border-radius: 4px; overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s, border-color 0.35s;
 }
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 48px rgba(0,0,0,0.1);
-  border-color: #8FAF7E;
-}
+.card:hover { transform: translateY(-8px); box-shadow: 0 24px 52px rgba(0,0,0,0.1); border-color: #8FAF7E; }
 
-.photoWrap {
-  position: relative; aspect-ratio: 4/3; overflow: hidden;
-}
+.photoWrap { position: relative; aspect-ratio: 4/3; overflow: hidden; }
 .photo {
   width: 100%; height: 100%;
   background-color: #2E5C42;
   background-size: cover; background-position: center;
   transition: transform 0.5s cubic-bezier(0.22,1,0.36,1);
 }
-.card:hover .photo { transform: scale(1.06); }
+.card:hover .photo { transform: scale(1.07); }
 
 .photoOverlay {
   position: absolute; inset: 0;
-  background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.18) 100%);
+  background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.15) 100%);
   transition: opacity 0.3s;
 }
 .card:hover .photoOverlay { opacity: 0; }
 
 .badge {
   position: absolute; top: 12px; left: 12px;
-  font-size: 10px; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 0.8px;
-  color: #1C3A2B; background: #8FAF7E;
-  padding: 4px 10px; border-radius: 2px;
+  font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px;
+  color: #1C3A2B; background: #8FAF7E; padding: 4px 10px; border-radius: 2px;
 }
 
 .cardBody { padding: 20px 20px 24px; }

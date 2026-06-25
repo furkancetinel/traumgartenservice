@@ -1,90 +1,84 @@
-.footer { font-family: 'Poppins', sans-serif; background: #1A1F1C; }
+.footer { font-family: 'Poppins', sans-serif; }
 
+/* CTA bandı */
 .ctaBand {
-  background: #1C3A2B; padding: 36px 5vw;
-  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  background: #1C3A2B; padding: 48px 5vw;
+  display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center;
 }
-.ctaBand p { font-size: 18px; font-weight: 500; color: #ffffff; margin: 0; line-height: 1.4; }
-.ctaBand em { color: #8FAF7E; font-style: normal; }
+.ctaText { }
+.ctaEye { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: #8FAF7E; margin-bottom: 10px; }
+.ctaTitle { font-size: clamp(22px, 3vw, 38px); font-weight: 700; color: #fff; line-height: 1.2; }
+.ctaTitle em { color: #8FAF7E; font-style: normal; }
 .ctaBtn {
+  display: inline-flex; align-items: center; gap: 10px;
   background: #8FAF7E; color: #1C3A2B;
   font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 600;
-  padding: 14px 28px; border-radius: 3px;
-  text-decoration: none; white-space: nowrap; flex-shrink: 0; display: inline-block;
+  padding: 16px 32px; border-radius: 3px;
+  text-decoration: none; white-space: nowrap;
   transition: background 0.2s, transform 0.15s;
+  box-shadow: 0 4px 20px rgba(143,175,126,0.3);
 }
-.ctaBtn:hover { background: #A8C896; transform: translateY(-1px); }
+.ctaBtn:hover { background: #A8C896; transform: translateY(-2px); }
+.ctaBtn svg { transition: transform 0.2s; }
+.ctaBtn:hover svg { transform: translateX(4px); }
 
+/* Ana grid */
 .main {
-  padding: 60px 5vw 52px;
-  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 48px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: #141814;
+  padding: 64px 5vw 52px;
+  display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.2fr; gap: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
-.logoWrap { display: block; margin-bottom: 18px; }
+.logoWrap { display: block; margin-bottom: 20px; }
 
-.tagline {
-  font-size: 14px; font-weight: 300;
-  color: rgba(255,255,255,0.65);
-  line-height: 1.75; max-width: 260px; margin-bottom: 20px;
-}
+.tagline { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.65); line-height: 1.75; max-width: 260px; margin-bottom: 24px; }
+
 .badge {
   display: inline-flex; align-items: center; gap: 7px;
   font-size: 12px; font-weight: 500; color: #8FAF7E;
-  background: rgba(143,175,126,0.12);
-  border: 1px solid rgba(143,175,126,0.25);
+  border: 1px solid rgba(143,175,126,0.3);
   border-radius: 3px; padding: 6px 12px; margin-bottom: 24px;
 }
 
 .socials { display: flex; gap: 8px; }
 .socBtn {
   width: 38px; height: 38px; border-radius: 3px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
   display: flex; align-items: center; justify-content: center;
-  color: rgba(255,255,255,0.6); text-decoration: none;
+  color: rgba(255,255,255,0.55); text-decoration: none;
   transition: border-color 0.2s, background 0.2s, color 0.2s;
 }
-.socBtn:hover { border-color: #8FAF7E; background: rgba(143,175,126,0.14); color: #8FAF7E; }
+.socBtn:hover { border-color: #8FAF7E; background: rgba(143,175,126,0.12); color: #8FAF7E; }
 
-/* Link kolonları */
-.col h4 {
-  font-size: 11px; font-weight: 600; letter-spacing: 2.5px;
-  text-transform: uppercase; color: rgba(255,255,255,0.5);
-  margin-bottom: 18px;
-}
+/* Kolonlar */
+.col h4 { font-size: 11px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 20px; }
 .col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.col ul a {
-  font-size: 14px; font-weight: 300;
-  color: rgba(255,255,255,0.7);
-  text-decoration: none; transition: color 0.2s;
-}
+.col ul a { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
 .col ul a:hover { color: #8FAF7E; }
 
-/* Kontakt satırları */
+/* Kontakt */
 .contactRows { display: flex; flex-direction: column; gap: 12px; }
-.contactRow {
-  display: flex; align-items: flex-start; gap: 10px;
-  font-size: 14px; font-weight: 300;
-  color: rgba(255,255,255,0.7); line-height: 1.5;
-}
+.contactRow { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.7); line-height: 1.5; }
 .contactRow svg { flex-shrink: 0; margin-top: 2px; }
 .contactRow a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
 .contactRow a:hover { color: #8FAF7E; }
 
-/* Alt bant */
+/* Alt bar */
 .bottom {
-  padding: 22px 5vw;
+  background: #0F1210;
+  padding: 20px 5vw;
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
 }
-.bottom p { font-size: 13px; color: rgba(255,255,255,0.4); margin: 0; }
+.bottom p { font-size: 13px; color: rgba(255,255,255,0.35); margin: 0; }
 .legal { display: flex; gap: 20px; }
-.legal a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
-.legal a:hover { color: rgba(255,255,255,0.75); }
+.legal a { font-size: 13px; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
+.legal a:hover { color: rgba(255,255,255,0.7); }
 
 @media (max-width: 1100px) { .main { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 640px) {
-  .ctaBand { flex-direction: column; text-align: center; }
+  .ctaBand { grid-template-columns: 1fr; }
   .main { grid-template-columns: 1fr; gap: 32px; padding: 40px 20px; }
   .tagline { max-width: 100%; }
   .bottom { flex-direction: column; text-align: center; gap: 10px; }

@@ -1,57 +1,26 @@
 .section {
-  background: #fff;
-  padding: 100px 5vw;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
+  background: #fff; padding: 100px 5vw;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
 }
-
 .photoCol { position: relative; height: 560px; }
-
-.mainPhoto {
-  width: 100%; height: 460px;
-  background-color: #2E5C42;
-  background-size: cover; background-position: center;
-  border-radius: 4px;
-}
-
+.mainPhoto { width: 100%; height: 460px; background-color: #2E5C42; background-size: cover; background-position: center; border-radius: 4px; }
 .accentPhoto {
-  position: absolute; bottom: 0; right: -28px;
-  width: 210px; height: 170px;
-  background-color: #8FAF7E;
-  background-size: cover; background-position: center;
-  border-radius: 4px;
-  border: 6px solid #fff;
-  box-shadow: 0 10px 36px rgba(0,0,0,0.16);
+  position: absolute; bottom: 0; right: -28px; width: 210px; height: 170px;
+  background-color: #8FAF7E; background-size: cover; background-position: center;
+  border-radius: 4px; border: 6px solid #fff; box-shadow: 0 10px 36px rgba(0,0,0,0.16);
 }
-
 .badge {
   position: absolute; top: 24px; left: -20px;
   background: #1C3A2B; color: #fff;
-  padding: 14px 20px; border-radius: 4px;
-  box-shadow: 0 8px 28px rgba(0,0,0,0.22);
+  padding: 14px 20px; border-radius: 4px; box-shadow: 0 8px 28px rgba(0,0,0,0.22);
   display: flex; flex-direction: column; gap: 2px;
 }
 .badgeNum { font-size: 15px; font-weight: 700; color: #fff; }
 .badgeLbl { font-size: 11px; font-weight: 400; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1px; }
-
 .label { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: #2E5C42; margin-bottom: 12px; }
 .title { font-size: clamp(26px, 3vw, 42px); font-weight: 700; color: #141414; line-height: 1.1; letter-spacing: -1px; margin-bottom: 24px; }
 .text { font-size: 15px; font-weight: 300; color: #5A6355; line-height: 1.85; margin-bottom: 16px; }
-
 .list { list-style: none; margin-top: 28px; display: flex; flex-direction: column; gap: 12px; }
-.listItem {
-  display: flex; align-items: flex-start; gap: 12px;
-  font-size: 14px; font-weight: 400; color: #141414; line-height: 1.5;
-  /* stagger delay gelir inline style ile */
-}
+.listItem { display: flex; align-items: flex-start; gap: 12px; font-size: 14px; font-weight: 400; color: #141414; line-height: 1.5; }
 .check { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: #8FAF7E; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
-
-@media (max-width: 960px) {
-  .section { grid-template-columns: 1fr; gap: 48px; padding: 72px 20px; }
-  .photoCol { height: 320px; }
-  .mainPhoto { height: 320px; }
-  .accentPhoto { display: none; }
-  .badge { left: 12px; top: 12px; }
-}
+@media (max-width: 960px) { .section { grid-template-columns: 1fr; gap: 48px; padding: 72px 20px; } .photoCol { height: 320px; } .mainPhoto { height: 320px; } .accentPhoto { display: none; } .badge { left: 12px; top: 12px; } }

@@ -1,0 +1,50 @@
+.section { background: #fff; padding: 100px 5vw; }
+.head { margin-bottom: 52px; }
+.label { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: #2E5C42; margin-bottom: 12px; }
+.title { font-size: clamp(28px, 3.5vw, 44px); font-weight: 700; color: #141414; line-height: 1.1; letter-spacing: -1px; margin-bottom: 12px; }
+.sub { font-size: 15px; font-weight: 300; color: #5A6355; }
+
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 36px; }
+
+.card {
+  background: #1C3A2B; border-radius: 4px; padding: 36px 32px;
+  display: flex; flex-direction: column; gap: 18px;
+  position: relative; overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s;
+}
+.card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(28,58,43,0.25); }
+
+.quote {
+  position: absolute; top: -8px; right: 20px;
+  font-size: 100px; font-weight: 800; line-height: 1;
+  color: rgba(143,175,126,0.12);
+  font-family: Georgia, serif; pointer-events: none;
+}
+
+.stars { display: flex; gap: 3px; }
+
+.text { font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.85); line-height: 1.75; flex: 1; }
+
+.footer { display: flex; align-items: center; gap: 14px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.08); }
+.avatar {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: #8FAF7E; color: #1C3A2B;
+  font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.name { font-size: 14px; font-weight: 600; color: #fff; margin-bottom: 2px; }
+.meta { font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.5); }
+
+/* Google badge */
+.googleRow {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 14px; font-weight: 400; color: #5A6355;
+}
+.googleLink {
+  color: #2E5C42; font-weight: 600; text-decoration: none;
+  margin-left: auto; transition: color 0.2s;
+}
+.googleLink:hover { color: #1C3A2B; }
+
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr; gap: 14px; } .section { padding: 72px 20px; } }

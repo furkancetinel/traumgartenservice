@@ -2,27 +2,17 @@
 import { useState, useRef, useCallback, useEffect } from 'react'
 import styles from './BeforeAfter.module.css'
 
+/*
+  FOTOĞRAF REHBERİ — VORHER/NACHHER
+  Klasör: public/images/beforeafter/
+  Her kategori için iki fotoğraf: before.jpg + after.jpg
+  Boyut: 1200×800px (yatay)
+*/
 const slides = [
-  {
-    label: 'Rasenpflege',
-    before: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80',
-    after:  'https://images.unsplash.com/photo-1589923188651-268a9765e432?w=1200&q=80',
-  },
-  {
-    label: 'Gartenreinigung',
-    before: 'https://images.unsplash.com/photo-1601001435957-74f0958a6078?w=1200&q=80',
-    after:  'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&q=80',
-  },
-  {
-    label: 'Grabpflege',
-    before: 'https://images.unsplash.com/photo-1597734750510-cbbc6af6ee68?w=1200&q=80',
-    after:  'https://images.unsplash.com/photo-1530968831187-a937a547a5e7?w=1200&q=80',
-  },
-  {
-    label: 'Rollrasen',
-    before: 'https://images.unsplash.com/photo-1464820453369-31d2c0b651af?w=1200&q=80',
-    after:  'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=80',
-  },
+  { label: 'Rasenpflege',     before: '/images/beforeafter/rasen-before.jpg',     after: '/images/beforeafter/rasen-after.jpg',     beforeBg: '#2a4a35', afterBg: '#3d7a50' },
+  { label: 'Gartenreinigung', before: '/images/beforeafter/garten-before.jpg',    after: '/images/beforeafter/garten-after.jpg',    beforeBg: '#3a3528', afterBg: '#3d6648' },
+  { label: 'Grabpflege',      before: '/images/beforeafter/grab-before.jpg',      after: '/images/beforeafter/grab-after.jpg',      beforeBg: '#2e2e2e', afterBg: '#3a5c42' },
+  { label: 'Rollrasen',       before: '/images/beforeafter/rollrasen-before.jpg', after: '/images/beforeafter/rollrasen-after.jpg', beforeBg: '#3a2e1a', afterBg: '#4a7a40' },
 ]
 
 export default function BeforeAfter() {
@@ -30,6 +20,14 @@ export default function BeforeAfter() {
   const [pos, setPos] = useState(50)
   const dragging = useRef(false)
   const sliderRef = useRef<HTMLDivElement>(null)
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const el = sectionRef.current; if (!el) return
+    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { el.classList.add('visible'); obs.unobserve(el) } }, { threshold: 0.05 })
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [])
 
   const getPct = useCallback((clientX: number) => {
     const rect = sliderRef.current?.getBoundingClientRect()
@@ -56,26 +54,24 @@ export default function BeforeAfter() {
     }
   }, [getPct])
 
-  const handleTabClick = (i: number) => { setActiveIdx(i); setPos(50) }
+  const cur = slides[activeIdx]
 
   return (
-    <section id="vorher-nachher" className={styles.section}>
-      <div className={styles.header}>
-        <p className={styles.label}>Unsere Arbeit</p>
-        <h2 className={styles.title}>Vorher &amp; Nachher</h2>
-        <p className={styles.sub}>Sehen Sie selbst, welchen Unterschied professionelle Pflege macht.</p>
-      </div>
-
-      <div className={styles.tabs}>
-        {slides.map((s, i) => (
-          <button
-            key={i}
-            onClick={() => handleTabClick(i)}
-            className={`${styles.tab} ${activeIdx === i ? styles.tabActive : ''}`}
-          >
-            {s.label}
-          </button>
-        ))}
+    <section id="vorher-nachher" ref={sectionRef} className={`${styles.section} reveal`}>
+      <div className={styles.head}>
+        <div>
+          <p className={styles.label}>Unsere Arbeit</p>
+          <h2 className={styles.title}>Vorher &amp; Nachher</h2>
+          <p className={styles.sub}>Ziehen Sie den Regler und sehen Sie den Unterschied.</p>
+        </div>
+        <div className={styles.tabs}>
+          {slides.map((s, i) => (
+            <button key={i} onClick={() => { setActiveIdx(i); setPos(50) }}
+              className={`${styles.tab} ${activeIdx === i ? styles.tabActive : ''}`}>
+              {s.label}
+            </button>
+          ))}
+        </div>
       </div>
 
       <div
@@ -84,43 +80,30 @@ export default function BeforeAfter() {
         onMouseDown={onMouseDown}
         onTouchStart={onTouchStart}
         role="img"
-        aria-label={`Vorher/Nachher Vergleich: ${slides[activeIdx].label}`}
+        aria-label={`Vorher/Nachher: ${cur.label}`}
       >
-        {/* After (hinter) */}
-        <div
-          className={styles.imgAfter}
-          style={{ backgroundImage: `url(${slides[activeIdx].after})` }}
-        />
-        {/* Before (vorne, geclippt) */}
-        <div
-          className={styles.imgBefore}
-          style={{
-            backgroundImage: `url(${slides[activeIdx].before})`,
-            clipPath: `inset(0 ${100 - pos}% 0 0)`,
-          }}
-        />
-        <div className={styles.labelBefore} aria-hidden="true">Vorher</div>
-        <div className={styles.labelAfter} aria-hidden="true">Nachher</div>
+        <div className={styles.imgAfter} style={{ backgroundImage: `url(${cur.after})`, backgroundColor: cur.afterBg }} />
+        <div className={styles.imgBefore} style={{ backgroundImage: `url(${cur.before})`, backgroundColor: cur.beforeBg, clipPath: `inset(0 ${100 - pos}% 0 0)` }} />
+
+        <span className={styles.labelVorher} aria-hidden="true">Vorher</span>
+        <span className={styles.labelNachher} aria-hidden="true">Nachher</span>
+
         <div className={styles.handle} style={{ left: `${pos}%` }}>
-          <div className={styles.handleBtn}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1C3A2B" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <polyline points="15 18 9 12 15 6"/>
-              <polyline points="9 18 3 12 9 6"/>
-            </svg>
+          <div className={styles.line} />
+          <div className={styles.btn}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C3A2B" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"/><polyline points="9 18 3 12 9 6"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C3A2B" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/><polyline points="15 18 21 12 15 6"/></svg>
           </div>
         </div>
       </div>
 
-      <div className={styles.miniGrid}>
+      <div className={styles.thumbs}>
         {slides.map((s, i) => (
-          <button
-            key={i}
-            onClick={() => handleTabClick(i)}
-            className={`${styles.mini} ${activeIdx === i ? styles.miniActive : ''}`}
-            aria-label={`${s.label} anzeigen`}
-          >
-            <div className={styles.miniImg} style={{ backgroundImage: `url(${s.after})` }} />
-            <div className={styles.miniCap}>{s.label}</div>
+          <button key={i} onClick={() => { setActiveIdx(i); setPos(50) }}
+            className={`${styles.thumb} ${activeIdx === i ? styles.thumbActive : ''}`}
+            aria-label={s.label}>
+            <div className={styles.thumbImg} style={{ backgroundImage: `url(${s.after})`, backgroundColor: s.afterBg }} />
+            <span className={styles.thumbLabel}>{s.label}</span>
           </button>
         ))}
       </div>

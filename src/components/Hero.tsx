@@ -1,82 +1,101 @@
 'use client'
 import { useEffect, useRef } from 'react'
+import Image from 'next/image'
 import styles from './Hero.module.css'
-
-const stats = [
-  { num: '8+', label: 'Leistungen' },
-  { num: '100%', label: 'Rechtl. zugelassen' },
-  { num: 'Wien', label: 'Einsatzgebiet' },
-]
 
 export default function Hero() {
   const scrollTo = (id: string) => document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' })
 
-  const counterRef = useRef<HTMLDivElement>(null)
+  const textRef = useRef<HTMLDivElement>(null)
   useEffect(() => {
-    const el = counterRef.current; if (!el) return
-    const obs = new IntersectionObserver(([e]) => {
-      if (e.isIntersecting) { el.classList.add('visible'); obs.unobserve(el) }
-    }, { threshold: 0.3 })
-    obs.observe(el)
-    return () => obs.disconnect()
+    const el = textRef.current; if (!el) return
+    requestAnimationFrame(() => el.classList.add('in'))
   }, [])
 
   return (
     <section id="hero" className={styles.hero}>
       {/*
         ═══════════════════════════════════════════
-        HERO FOTOĞRAFI
-        Dosya: public/images/hero-bg.jpg
-        Öneri: Geniş açı Viyana bahçesi / peyzaj
-        Boyut: 1920×1080px veya daha büyük
-        Ekledikten sonra: background satırını
-        backgroundImage: "url('/images/hero-bg.jpg')"
-        ile değiştirin, background: '#1C3A2B' silin
+        HERO ARKA PLANI
+        Dosya: public/images/hero-bg.jpg (1920×1080)
+        Öneri: Geniş bahçe / peyzaj fotoğrafı
+        Eklendikten sonra:
+          background: '#1C3A2B'  →  sil
+          backgroundImage: "url('/images/hero-bg.jpg')"  →  aç
         ═══════════════════════════════════════════
       */}
-      <div className={styles.photoBg} style={{ background: '#1C3A2B' }} role="img" aria-label="Gepflegter Garten in Wien" />
+      <div
+        className={styles.bg}
+        style={{ background: '#1C3A2B' }}
+        role="img" aria-label="Gepflegter Garten"
+      />
       <div className={styles.overlay} aria-hidden="true" />
 
-      {/* Hareketli daire süsler */}
-      <div className={styles.decor1} aria-hidden="true" />
-      <div className={styles.decor2} aria-hidden="true" />
-
       <div className={styles.inner}>
-        <div className={styles.eyebrowRow}>
-          <span className={styles.dot} aria-hidden="true" />
-          <p className={styles.eyebrow}>Professionelle Gartenpflege · Wiener Neustadt</p>
+        {/* Sol — metin */}
+        <div ref={textRef} className={styles.textCol}>
+          <p className={styles.eyebrow}>
+            <span className={styles.dot} aria-hidden="true" />
+            Professionelle Gartenpflege · Wiener Neustadt
+          </p>
+          <h1 className={styles.title}>
+            Ihr Garten.<br />
+            <span className={styles.accent}>Unsere Leidenschaft.</span>
+          </h1>
+          <p className={styles.sub}>
+            Rasenmähen, Bewässerung, Grabpflege und Reinigung —
+            termingerecht, sorgfältig und zu fairen Preisen.
+          </p>
+          <div className={styles.actions}>
+            <button onClick={() => scrollTo('#kontakt')} className={styles.btnPrimary}>
+              Kostenloses Angebot
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </button>
+            <button onClick={() => scrollTo('#leistungen')} className={styles.btnGhost}>
+              Leistungen ansehen
+            </button>
+          </div>
+          <div className={styles.stats}>
+            {[
+              { n: '8+',  l: 'Leistungen' },
+              { n: 'Mo–Fr', l: '07:00–18:00' },
+              { n: 'Wien', l: 'Einsatzgebiet' },
+            ].map(s => (
+              <div key={s.l} className={styles.stat}>
+                <span className={styles.statN}>{s.n}</span>
+                <span className={styles.statL}>{s.l}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <h1 className={styles.title}>
-          Ihr Garten.<br />
-          <span className={styles.titleAccent}>Unsere Leidenschaft.</span>
-        </h1>
-
-        <p className={styles.sub}>
-          Rasenmähen, Bewässerung, Grabpflege und Reinigung —
-          termingerecht, sorgfältig und zu fairen Preisen.
-        </p>
-
-        <div className={styles.actions}>
-          <button onClick={() => scrollTo('#kontakt')} className={styles.btnPrimary}>
-            Kostenloses Angebot anfragen
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-            </svg>
-          </button>
-          <button onClick={() => scrollTo('#leistungen')} className={styles.btnGhost}>
-            Leistungen ansehen
-          </button>
-        </div>
-
-        {/* Stats */}
-        <div ref={counterRef} className={`${styles.stats} reveal`}>
-          {stats.map(s => (
-            <div key={s.label} className={styles.stat}>
-              <span className={styles.statNum}>{s.num}</span>
-              <span className={styles.statLabel}>{s.label}</span>
+        {/* Sağ — bahçıvan fotoğrafı */}
+        <div className={styles.photoCol}>
+          {/*
+            BAHÇİVAN FOTOĞRAFI
+            Dosya: public/images/gardener.jpg
+            Boyut: 480×640px — dikey format
+            Öneri: "professional gardener portrait outdoor smiling"
+            veya gerçek çalışan fotoğrafı
+          */}
+          <div className={styles.gardenerWrap}>
+            <div
+              className={styles.gardenerPhoto}
+              style={{ backgroundImage: `url('/images/gardener.jpg')` }}
+              role="img"
+              aria-label="Gartenexperte von TraumGartenservice"
+            />
+            {/* Floating kart */}
+            <div className={styles.floatCard}>
+              <div className={styles.floatDot} aria-hidden="true" />
+              <div>
+                <div className={styles.floatTitle}>Jetzt verfügbar</div>
+                <div className={styles.floatSub}>Schnelle Terminvergabe</div>
+              </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
 
