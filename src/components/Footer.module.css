@@ -1,116 +1,69 @@
-.footer { font-family: 'Poppins', sans-serif; background: #0F1F17; }
+.footer { font-family: 'Poppins', sans-serif; background: #111210; }
 
-/* CTA bandı */
 .ctaBand {
-  background: #1C3A2B;
-  padding: 36px 5vw;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+  background: #1C3A2B; padding: 36px 5vw;
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
 }
-.ctaBand p {
-  font-size: 17px; font-weight: 500;
-  color: rgba(255,255,255,0.88); margin: 0;
-}
+.ctaBand p { font-size: 17px; font-weight: 500; color: rgba(255,255,255,0.88); margin: 0; }
 .ctaBand em { color: #8FAF7E; font-style: normal; }
 .ctaBtn {
-  background: #8FAF7E; color: #1C3A2B;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px; font-weight: 600;
-  padding: 13px 28px; border-radius: 30px;
-  text-decoration: none; white-space: nowrap; flex-shrink: 0;
+  background: #8FAF7E; color: #1C3A2B; font-family: 'Poppins', sans-serif;
+  font-size: 13px; font-weight: 600; padding: 13px 26px; border-radius: 2px;
+  text-decoration: none; white-space: nowrap; flex-shrink: 0; display: inline-block;
   transition: background 0.2s, transform 0.15s;
-  display: inline-block;
 }
 .ctaBtn:hover { background: #A8C896; transform: translateY(-1px); }
 
-/* ana bölüm */
 .main {
   padding: 60px 5vw 52px;
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1.1fr;
-  gap: 48px;
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.1fr; gap: 48px;
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
-/* marka kolonu */
-.logo {
-  display: flex; align-items: center; gap: 10px;
-  margin-bottom: 16px;
-}
-.logo span {
-  font-size: 19px; font-weight: 700; color: #fff; letter-spacing: -0.3px;
-}
-.logo em { color: #8FAF7E; font-style: normal; }
+.logoWrap { display: block; margin-bottom: 16px; }
 
-.tagline {
-  font-size: 14px; font-weight: 300;
-  color: rgba(255,255,255,0.42); line-height: 1.75;
-  max-width: 240px; margin-bottom: 20px;
-}
+.tagline { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.4); line-height: 1.75; max-width: 240px; margin-bottom: 20px; }
 .badge {
   display: inline-flex; align-items: center; gap: 6px;
   font-size: 11px; font-weight: 500; color: #8FAF7E;
-  background: rgba(143,175,126,0.1);
-  border: 1px solid rgba(143,175,126,0.22);
-  border-radius: 20px; padding: 5px 12px;
-  margin-bottom: 24px;
+  background: rgba(143,175,126,0.1); border: 1px solid rgba(143,175,126,0.22);
+  border-radius: 2px; padding: 5px 10px; margin-bottom: 22px;
 }
 
-.socials { display: flex; gap: 10px; }
+.socials { display: flex; gap: 8px; }
 .socBtn {
-  width: 38px; height: 38px;
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.1);
-  background: rgba(255,255,255,0.04);
+  width: 36px; height: 36px; border-radius: 2px;
+  border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04);
   display: flex; align-items: center; justify-content: center;
-  color: rgba(255,255,255,0.6);
-  text-decoration: none;
+  color: rgba(255,255,255,0.55); text-decoration: none;
   transition: border-color 0.2s, background 0.2s, color 0.2s;
 }
 .socBtn:hover { border-color: #8FAF7E; background: rgba(143,175,126,0.12); color: #8FAF7E; }
 
-/* link kolonları */
-.col h4 {
-  font-size: 11px; font-weight: 600; letter-spacing: 2.5px;
-  text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 18px;
-}
-.col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.col ul a {
-  font-size: 14px; font-weight: 300;
-  color: rgba(255,255,255,0.5); text-decoration: none;
-  transition: color 0.2s;
-}
+.col h4 { font-size: 10px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 18px; }
+.col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.col ul a { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.48); text-decoration: none; transition: color 0.2s; }
 .col ul a:hover { color: #8FAF7E; }
 
-/* kontakt satırları */
-.contactRows { display: flex; flex-direction: column; gap: 12px; }
-.contactRow {
-  display: flex; align-items: flex-start; gap: 10px;
-  font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.52); line-height: 1.5;
-}
+.contactRows { display: flex; flex-direction: column; gap: 11px; }
+.contactRow { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.48); line-height: 1.5; }
 .contactRow svg { flex-shrink: 0; margin-top: 1px; }
-.contactRow a { color: rgba(255,255,255,0.52); text-decoration: none; transition: color 0.2s; }
+.contactRow a { color: rgba(255,255,255,0.48); text-decoration: none; transition: color 0.2s; }
 .contactRow a:hover { color: #8FAF7E; }
 
-/* alt bant */
 .bottom {
-  padding: 20px 5vw;
-  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 20px 5vw; display: flex; align-items: center; justify-content: space-between; gap: 16px;
   border-top: 1px solid rgba(255,255,255,0.04);
 }
-.bottom p { font-size: 12px; color: rgba(255,255,255,0.25); margin: 0; }
-.legal { display: flex; gap: 22px; }
-.legal a { font-size: 12px; color: rgba(255,255,255,0.25); text-decoration: none; transition: color 0.2s; }
-.legal a:hover { color: rgba(255,255,255,0.65); }
+.bottom p { font-size: 12px; color: rgba(255,255,255,0.22); margin: 0; }
+.legal { display: flex; gap: 20px; }
+.legal a { font-size: 12px; color: rgba(255,255,255,0.22); text-decoration: none; transition: color 0.2s; }
+.legal a:hover { color: rgba(255,255,255,0.55); }
 
-@media (max-width: 1100px) {
-  .main { grid-template-columns: 1fr 1fr; }
-}
+@media (max-width: 1100px) { .main { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 640px) {
   .ctaBand { flex-direction: column; text-align: center; }
-  .main { grid-template-columns: 1fr; gap: 32px; padding: 40px 20px 36px; }
+  .main { grid-template-columns: 1fr; gap: 28px; padding: 40px 20px 32px; }
   .tagline { max-width: 100%; }
-  .bottom { flex-direction: column; text-align: center; gap: 12px; }
+  .bottom { flex-direction: column; text-align: center; gap: 10px; }
 }

@@ -1,41 +1,67 @@
 .section {
-  background: #1C3A2B;
+  background: #fff;
   padding: 100px 5vw;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 64px;
+  gap: 80px;
   align-items: center;
 }
-.label {
-  font-size: 11px; font-weight: 600; letter-spacing: 3px;
-  text-transform: uppercase; color: #8FAF7E; margin-bottom: 14px;
+
+/* FOTOĞRAF KOLONU */
+.photoCol {
+  position: relative;
+  height: 560px;
 }
-.title {
-  font-size: clamp(26px, 3vw, 42px); font-weight: 700;
-  color: #fff; line-height: 1.1; letter-spacing: -1px; margin-bottom: 24px;
+.mainPhoto {
+  width: 100%; height: 440px;
+  background-color: #2E5C42;
+  background-size: cover;
+  background-position: center;
+  border-radius: 2px;
 }
-.text {
-  font-size: 15px; font-weight: 300;
-  color: rgba(255,255,255,0.68); line-height: 1.85;
-  margin-bottom: 18px;
-}
-.list {
-  list-style: none;
-  display: flex; flex-direction: column; gap: 16px;
-}
-.listItem {
-  display: flex; align-items: flex-start; gap: 14px;
-  font-size: 15px; font-weight: 400;
-  color: rgba(255,255,255,0.82); line-height: 1.5;
-}
-.check {
-  flex-shrink: 0;
-  width: 24px; height: 24px;
-  border-radius: 50%; background: #8FAF7E;
-  display: flex; align-items: center; justify-content: center;
-  margin-top: 1px;
+.accentPhoto {
+  position: absolute;
+  bottom: 0; right: -32px;
+  width: 200px; height: 160px;
+  background-color: #8FAF7E;
+  background-size: cover;
+  background-position: center;
+  border-radius: 2px;
+  border: 6px solid #fff;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.14);
 }
 
-@media (max-width: 900px) {
-  .section { grid-template-columns: 1fr; gap: 40px; padding: 72px 20px; }
+/* TEXT KOLONU */
+.label {
+  font-size: 11px; font-weight: 600; letter-spacing: 3px;
+  text-transform: uppercase; color: #2E5C42; margin-bottom: 12px;
+}
+.title {
+  font-size: clamp(26px, 3vw, 40px); font-weight: 700;
+  color: #141414; line-height: 1.1; letter-spacing: -1px; margin-bottom: 24px;
+}
+.text {
+  font-size: 15px; font-weight: 300; color: #5A6355;
+  line-height: 1.85; margin-bottom: 16px;
+}
+
+.list {
+  list-style: none; margin-top: 28px;
+  display: flex; flex-direction: column; gap: 14px;
+}
+.listItem {
+  display: flex; align-items: flex-start; gap: 12px;
+  font-size: 14px; font-weight: 400; color: #141414; line-height: 1.5;
+}
+.check {
+  flex-shrink: 0; width: 22px; height: 22px;
+  border-radius: 50%; background: #8FAF7E;
+  display: flex; align-items: center; justify-content: center; margin-top: 1px;
+}
+
+@media (max-width: 960px) {
+  .section { grid-template-columns: 1fr; gap: 48px; padding: 72px 20px; }
+  .photoCol { height: 320px; }
+  .mainPhoto { height: 320px; }
+  .accentPhoto { display: none; }
 }

@@ -7,35 +7,28 @@
   --green-mid:   #2E5C42;
   --green-sage:  #8FAF7E;
   --green-light: #C8DDB8;
-  --cream:       #F5F0E8;
-  --cream-dark:  #EDE6D8;
+  --white:       #FFFFFF;
+  --off-white:   #F8F8F6;
   --text-dark:   #141414;
   --text-muted:  #5A6355;
-  --white:       #FFFFFF;
   --accent:      #A8C896;
 }
 
 html { scroll-behavior: smooth; }
 body {
   font-family: 'Poppins', sans-serif;
-  background: var(--cream);
+  background: #fff;
   color: var(--text-dark);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Scroll reveal */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.65s ease, transform 0.65s ease;
 }
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Staggered reveal delays */
+.reveal.visible { opacity: 1; transform: translateY(0); }
 .reveal-d1 { transition-delay: 0.1s; }
 .reveal-d2 { transition-delay: 0.2s; }
 .reveal-d3 { transition-delay: 0.3s; }

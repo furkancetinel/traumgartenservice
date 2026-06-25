@@ -1,77 +1,72 @@
 .section {
-  background: #EDE6D8;
+  background: #fff;
   padding: 100px 5vw;
 }
 .head { margin-bottom: 56px; }
 .label {
   font-size: 11px; font-weight: 600; letter-spacing: 3px;
-  text-transform: uppercase; color: #2E5C42; margin-bottom: 14px;
+  text-transform: uppercase; color: #2E5C42; margin-bottom: 12px;
 }
 .title {
   font-size: clamp(28px, 3.5vw, 46px); font-weight: 700;
   color: #141414; line-height: 1.1; letter-spacing: -1px; margin-bottom: 14px;
 }
-.sub {
-  font-size: 15px; font-weight: 300; color: #5A6355;
-  max-width: 480px; line-height: 1.7;
-}
+.sub { font-size: 15px; font-weight: 300; color: #5A6355; max-width: 480px; line-height: 1.7; }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: #e8e8e4;
+  border: 1px solid #e8e8e4;
+  overflow: hidden;
 }
 
 .card {
   background: #fff;
-  border-radius: 20px;
-  padding: 32px 28px;
-  position: relative;
   overflow: hidden;
-  transition: transform 0.25s, box-shadow 0.25s;
+  transition: transform 0.25s;
+  cursor: default;
 }
-.card::after {
-  content: '';
-  position: absolute; bottom: 0; left: 0;
-  width: 100%; height: 3px;
-  background: #8FAF7E;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s;
-}
-.card:hover::after { transform: scaleX(1); }
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 48px rgba(28,58,43,0.12);
-}
+.card:hover { z-index: 1; transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.1); }
 
-.icon {
-  width: 52px; height: 52px;
-  background: #C8DDB8;
-  border-radius: 14px;
-  display: flex; align-items: center; justify-content: center;
-  margin-bottom: 20px;
+/* Fotoğraf alanı */
+.photoWrap {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
 }
-.icon svg { width: 26px; height: 26px; }
+.photo {
+  width: 100%; height: 100%;
+  background-color: #2E5C42;  /* fotoğraf yokken yeşil */
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s ease;
+}
+.card:hover .photo { transform: scale(1.04); }
 
-.cardTitle {
-  font-size: 17px; font-weight: 700;
-  color: #141414; margin-bottom: 8px; line-height: 1.25;
-}
 .badge {
-  display: inline-block;
-  font-size: 11px; font-weight: 500;
-  color: #2E5C42; background: #e8f0e2;
-  padding: 3px 10px; border-radius: 20px;
-  margin-bottom: 10px; letter-spacing: 0.3px;
-}
-.cardDesc {
-  font-size: 14px; font-weight: 300;
-  color: #5A6355; line-height: 1.7;
-  margin-top: 4px;
+  position: absolute; top: 12px; left: 12px;
+  font-size: 10px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.8px;
+  color: #1C3A2B; background: #8FAF7E;
+  padding: 4px 10px; border-radius: 2px;
 }
 
+.cardBody { padding: 20px 22px 24px; }
+.cardTitle {
+  font-size: 15px; font-weight: 700;
+  color: #141414; margin-bottom: 8px; line-height: 1.3;
+}
+.cardDesc { font-size: 13px; font-weight: 300; color: #5A6355; line-height: 1.65; }
+
+@media (max-width: 1100px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}
 @media (max-width: 768px) {
   .section { padding: 72px 20px; }
-  .grid { grid-template-columns: 1fr; gap: 16px; }
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 1px; }
+}
+@media (max-width: 480px) {
+  .grid { grid-template-columns: 1fr; }
 }
