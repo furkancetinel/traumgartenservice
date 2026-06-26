@@ -9,10 +9,22 @@ import styles from './BeforeAfter.module.css'
   Boyut: 1200×800px (yatay)
 */
 const slides = [
-  { label: 'Rasenpflege',     before: '/images/beforeafter/rasen-before.jpg',     after: '/images/beforeafter/rasen-after.jpg',     beforeBg: '#2a4a35', afterBg: '#3d7a50' },
-  { label: 'Gartenreinigung', before: '/images/beforeafter/garten-before.jpg',    after: '/images/beforeafter/garten-after.jpg',    beforeBg: '#3a3528', afterBg: '#3d6648' },
-  { label: 'Grabpflege',      before: '/images/beforeafter/grab-before.jpg',      after: '/images/beforeafter/grab-after.jpg',      beforeBg: '#2e2e2e', afterBg: '#3a5c42' },
-  { label: 'Rollrasen',       before: '/images/beforeafter/rollrasen-before.jpg', after: '/images/beforeafter/rollrasen-after.jpg', beforeBg: '#3a2e1a', afterBg: '#4a7a40' },
+  { label: 'Rasenpflege',
+    before: 'https://fastly.picsum.photos/id/1084/1200/800.jpg?hmac=H3N-o2H-gUFQdpJ58lVVCdxaVjL7O5gAXJWW9BnuaBM',
+    after:  'https://fastly.picsum.photos/id/112/1200/800.jpg?hmac=8uODYG6GQpLNvZyHU8JTe7-vLbmJPvXJL4HuB2i1vgk',
+    beforeBg: '#2a4a35', afterBg: '#3d7a50' },
+  { label: 'Gartenreinigung',
+    before: 'https://fastly.picsum.photos/id/431/1200/800.jpg?hmac=EzDFfCzOmLpXOVfFOmALN5fU_eTUqKMjEOMXb7Ej5gk',
+    after:  'https://fastly.picsum.photos/id/145/1200/800.jpg?hmac=6yHzrUHJeQNDsatfKtEjb0QwzeBl8jjd3N_qB9Ep6sA',
+    beforeBg: '#3a3528', afterBg: '#3d6648' },
+  { label: 'Grabpflege',
+    before: 'https://fastly.picsum.photos/id/164/1200/800.jpg?hmac=DcXGPuFqVanYqBJ6m_vMolwAuN9AEGmTEzHdDcE4m5Q',
+    after:  'https://fastly.picsum.photos/id/249/1200/800.jpg?hmac=UhBVUJsJq3OFHnz5a4iLCaDJgM6i1hGdFyOb_0A8LhI',
+    beforeBg: '#2e2e2e', afterBg: '#3a5c42' },
+  { label: 'Rollrasen',
+    before: 'https://fastly.picsum.photos/id/504/1200/800.jpg?hmac=7xI3JIHbA_lmI3SBpQ4GkGcYoFetDFqlOp6CizFTUQo',
+    after:  'https://fastly.picsum.photos/id/137/1200/800.jpg?hmac=nAiMuFVaXMqcG4_v_v6L0DGlxSM8YzAYGNm4G8hvnYc',
+    beforeBg: '#3a2e1a', afterBg: '#4a7a40' },
 ]
 
 export default function BeforeAfter() {

@@ -31,12 +31,12 @@ export default function About() {
           FOTOĞRAF: public/images/about.jpg (800×560px)
           Öneri: "gardener work professional team outdoor"
         */}
-        <div className={styles.mainPhoto} style={{ backgroundImage: `url('/images/about.jpg')` }} role="img" aria-label="Das TraumGartenservice-Team bei der Arbeit" />
+        <div className={styles.mainPhoto} style={{ backgroundImage: `url('https://fastly.picsum.photos/id/146/800/560.jpg?hmac=2cK7g9FbBfmW7_EKfB-jvijmT5e2t3PZ4hOJBvpCqSA')` }} role="img" aria-label="Das TraumGartenservice-Team bei der Arbeit" />
         {/*
           İKİNCİ FOTOĞRAF: public/images/about-2.jpg (400×320px)
           Öneri: "garden detail closeup plants"
         */}
-        <div className={styles.accentPhoto} style={{ backgroundImage: `url('/images/about-2.jpg')` }} role="img" aria-label="Detailaufnahme Garten" />
+        <div className={styles.accentPhoto} style={{ backgroundImage: `url('https://fastly.picsum.photos/id/152/400/320.jpg?hmac=mBjbxcK_MaBTi5YVvJnU-RR0OcN-x_i_S-wuU7Tv6ew')` }} role="img" aria-label="Detailaufnahme Garten" />
         <div className={styles.floatBadge}>
           <span className={styles.badgeNum}>Wiener Neustadt</span>
           <span className={styles.badgeLbl}>Unser Standort</span>
