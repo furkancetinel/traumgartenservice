@@ -17,10 +17,11 @@ export default function Hero() {
   const photoRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    requestAnimationFrame(() => {
+    const t = setTimeout(() => {
       textRef.current?.classList.add('in')
       photoRef.current?.classList.add('in')
-    })
+    }, 100)
+    return () => clearTimeout(t)
   }, [])
 
   const items = [...ticker, ...ticker]
