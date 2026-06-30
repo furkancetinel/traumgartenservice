@@ -3,6 +3,7 @@ import './globals.css'
 import CookieBanner from '@/components/CookieBanner'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://traum-gartenservice.at'),
   title: 'TraumGartenservice — Professionelle Gartenpflege Wiener Neustadt',
   description: 'Gartenpflege, Rasenmähen, Bewässerung, Grabpflege und Reinigung in Wiener Neustadt. Faire Preise, schnelle Terminvergabe. Jetzt Angebot anfragen: +43 676 5476510',
   keywords: 'Gartenpflege Wiener Neustadt, Rasenmähen, Grabpflege, Grünflächenreinigung, Gartenservice Wien',

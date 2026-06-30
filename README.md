@@ -31,11 +31,11 @@ git push -u origin main
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_SECURE=false
-SMTP_USER=info@traumgartenservice.at
+SMTP_USER=info@traum-gartenservice.at
 SMTP_PASS=xxxx-xxxx-xxxx-xxxx   ← Gmail App Password
-MAIL_TO=info@traumgartenservice.at
-MAIL_FROM=TraumGartenservice <info@traumgartenservice.at>
-NEXT_PUBLIC_SITE_URL=https://traumgartenservice.at
+MAIL_TO=info@traum-gartenservice.at
+MAIL_FROM=TraumGartenservice <info@traum-gartenservice.at>
+NEXT_PUBLIC_SITE_URL=https://traum-gartenservice.at
 ```
 
 ### Gmail App Password Oluşturma
@@ -45,7 +45,7 @@ NEXT_PUBLIC_SITE_URL=https://traumgartenservice.at
 4. 16 haneli şifreyi `SMTP_PASS` olarak girin
 
 ### Domain
-Coolify → Domains → `traumgartenservice.at` ekleyin → SSL otomatik.
+Coolify → Domains → `traum-gartenservice.at` ekleyin → SSL otomatik.
 
 ## Logo Ekleme
 `src/components/Header.tsx` ve `Footer.tsx` dosyalarında SVG placeholder var.

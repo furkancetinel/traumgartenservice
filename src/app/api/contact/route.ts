@@ -46,15 +46,16 @@ export async function POST(req: NextRequest) {
 </style></head>
 <body>
 <div class="wrap">
-  <div class="hdr"><h1>Traum<span>Garten</span>service — Neue Anfrage</h1></div>
+  <div class="hdr"><img src="https://traum-gartenservice.at/images/logo-email.png" alt="TraumGartenservice" width="180" height="38" style="display:block;"/></div>
   <div class="body">
+    <h2 style="font-size:18px;color:#1C3A2B;margin:0 0 24px;">Neue Anfrage über das Kontaktformular</h2>
     <div class="row"><div class="lbl">Name</div><div class="val">${vorname} ${nachname}</div></div>
     <div class="row"><div class="lbl">E-Mail</div><div class="val"><a href="mailto:${email}">${email}</a></div></div>
     ${telefon ? `<div class="row"><div class="lbl">Telefon</div><div class="val">${telefon}</div></div>` : ''}
     ${leistung ? `<div class="row"><div class="lbl">Gewünschte Leistung</div><div class="val">${leistung}</div></div>` : ''}
     <div class="row"><div class="lbl">Nachricht</div><div class="msg">${nachricht}</div></div>
   </div>
-  <div class="ftr"><p>Gesendet über das Kontaktformular auf traumgartenservice.at</p></div>
+  <div class="ftr"><p>Gesendet über das Kontaktformular auf traum-gartenservice.at</p></div>
 </div>
 </body></html>`
 
@@ -86,13 +87,13 @@ export async function POST(req: NextRequest) {
 </style></head>
 <body>
 <div class="wrap">
-  <div class="hdr"><h1>Traum<span>Garten</span>service</h1></div>
+  <div class="hdr"><img src="https://traum-gartenservice.at/images/logo-email.png" alt="TraumGartenservice" width="180" height="38" style="display:block;"/></div>
   <div class="body">
     <p>Guten Tag ${vorname},</p>
     <p>vielen Dank für Ihre Anfrage! Wir haben Ihre Nachricht erhalten und melden uns in Kürze bei Ihnen.</p>
-    <p>Mit freundlichen Grüßen,<br><strong>Ihr TraumGartenservice-Team</strong><br>Wien, Österreich</p>
+    <p>Mit freundlichen Grüßen,<br><strong>Ihr TraumGartenservice-Team</strong><br>Wiener Neustadt, Österreich</p>
   </div>
-  <div class="ftr"><p>© 2025 TraumGartenservice · Wien</p></div>
+  <div class="ftr"><p>© ${new Date().getFullYear()} TraumGartenservice · Wiener Neustadt</p></div>
 </div>
 </body></html>`,
     })
