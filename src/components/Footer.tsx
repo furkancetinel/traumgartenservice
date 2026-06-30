@@ -39,7 +39,7 @@ export default function Footer() {
           {[
             { svg: 'M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z M12 7m-3 0a3 3 0 106 0 3 3 0 10-6 0', text: 'Grazer Str. 73, 2700 Wiener Neustadt' },
             { svg: 'M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 12a19.79 19.79 0 01-3.08-8.59A2 2 0 013.58 1.22h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L7.91 8.77a16 16 0 006.29 6.29l1.6-1.6a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z', text: '+43 676 5476510', href: 'tel:+436765476510' },
-            { svg: 'M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z M22,6 12,13 2,6', text: 'info@traumgartenservice.at', href: 'mailto:info@traumgartenservice.at' },
+            { svg: 'M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z M22,6 12,13 2,6', text: 'info@traum-gartenservice.at', href: 'mailto:info@traum-gartenservice.at' },
             { svg: 'M12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12s4.48 10 10 10z M12 6v6l4 2', text: 'Mo–Fr: 07:00–18:00 Uhr' },
           ].map(({ svg, text, href }, i) => (
             <div key={i} className={styles.contactRow}>
