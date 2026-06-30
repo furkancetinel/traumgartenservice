@@ -39,4 +39,9 @@
 .cardDesc { font-size: 14px; font-weight: 300; color: #5A6355; line-height: 1.65; }
 
 @media (max-width: 1100px) { .grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 768px) { .section { padding: 72px 20px; } .grid { grid-template-columns: 1fr; gap: 14px; } }
+@media (max-width: 768px) {
+  .section { padding: 72px 20px; }
+  .grid { grid-template-columns: 1fr; gap: 14px; }
+  .head { text-align: center; }
+  .sub { margin-left: auto; margin-right: auto; }
+}

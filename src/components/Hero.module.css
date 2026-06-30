@@ -130,8 +130,12 @@
 
 @media (max-width: 900px) {
   .inner { grid-template-columns: 1fr; padding-top: 110px; }
-  .photoCol { order: -1; margin-bottom: 8px; animation-duration: 0.6s !important; animation-delay: 0.05s !important; }
-  .gardenerImg { max-width: 280px; }
-  .textCol { padding-bottom: 32px; animation-duration: 0.5s !important; animation-delay: 0s !important; }
+  .photoCol { order: 1; margin-top: 16px; }
+  .gardenerImg { max-width: 260px; }
+  .textCol { padding-bottom: 32px; align-items: center; text-align: center; animation-duration: 0.5s !important; animation-delay: 0s !important; }
+  .eyebrow { justify-content: center; }
+  .sub { margin-left: auto; margin-right: auto; }
+  .actions { justify-content: center; }
+  .stats { justify-content: center; }
   .title { letter-spacing: -2px; }
 }

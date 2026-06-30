@@ -49,5 +49,12 @@
 .successBox p { font-size: 15px; color: rgba(255,255,255,0.65); font-weight: 300; line-height: 1.7; }
 .resetBtn { background: none; border: 1.5px solid rgba(255,255,255,0.2); border-radius: 3px; padding: 10px 22px; font-family: 'Poppins', sans-serif; font-size: 14px; color: rgba(255,255,255,0.6); cursor: pointer; transition: border-color 0.2s, color 0.2s; margin-top: 6px; }
 .resetBtn:hover { border-color: #8FAF7E; color: #8FAF7E; }
-@media (max-width: 960px) { .section { grid-template-columns: 1fr; gap: 48px; padding: 72px 20px; } .sub { max-width: 100%; } }
+@media (max-width: 960px) {
+  .section { grid-template-columns: 1fr; gap: 48px; padding: 72px 20px; }
+  .sub { max-width: 100%; }
+  .info { text-align: center; }
+  .sub { margin-left: auto; margin-right: auto; }
+  .contactItems { text-align: left; }
+  .contactItem { justify-content: flex-start; }
+}
 @media (max-width: 600px) { .formWrap { padding: 28px 20px; } .row { grid-template-columns: 1fr; } }
