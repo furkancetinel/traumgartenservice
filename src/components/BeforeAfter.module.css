@@ -33,6 +33,7 @@
   position: relative; border-radius: 4px; overflow: hidden;
   height: clamp(260px, 40vw, 500px);
   user-select: none; cursor: col-resize;
+  touch-action: none;
   box-shadow: 0 24px 80px rgba(0,0,0,0.5);
   margin-bottom: 16px;
 }

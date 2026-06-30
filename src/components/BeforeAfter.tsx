@@ -37,10 +37,10 @@ export default function BeforeAfter() {
 
   useEffect(() => {
     const onMove = (e: MouseEvent) => { if (dragging.current) setPos(getPct(e.clientX)) }
-    const onTMove = (e: TouchEvent) => { if (dragging.current) setPos(getPct(e.touches[0].clientX)) }
+    const onTMove = (e: TouchEvent) => { if (dragging.current) { e.preventDefault(); setPos(getPct(e.touches[0].clientX)) } }
     const onUp = () => { dragging.current = false }
     window.addEventListener('mousemove', onMove)
-    window.addEventListener('touchmove', onTMove, { passive: true })
+    window.addEventListener('touchmove', onTMove, { passive: false })
     window.addEventListener('mouseup', onUp)
     window.addEventListener('touchend', onUp)
     return () => {
