@@ -47,4 +47,9 @@
 }
 .googleLink:hover { color: #1C3A2B; }
 
-@media (max-width: 900px) { .grid { grid-template-columns: 1fr; gap: 14px; } .section { padding: 72px 20px; } }
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; gap: 14px; }
+  .section { padding: 72px 20px; }
+  .googleRow { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .googleLink { margin-left: 0; }
+}

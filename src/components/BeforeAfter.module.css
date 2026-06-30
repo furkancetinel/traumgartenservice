@@ -78,6 +78,7 @@
 @media (max-width: 768px) {
   .section { padding: 72px 20px; }
   .head { flex-direction: column; align-items: flex-start; }
+  .tabs { justify-content: center; width: 100%; }
   .sliderWrap { height: 320px; }
   .navBtn { display: none; }
   .sliderOuter { gap: 0; }
