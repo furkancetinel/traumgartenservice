@@ -1,0 +1,15 @@
+.wrap { background: #fff; min-height: 100vh; padding: 140px 6vw 100px; }
+.inner { max-width: 760px; margin: 0 auto; }
+.back {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 500;
+  color: #2E5C42; text-decoration: none; margin-bottom: 40px;
+}
+.back:hover { color: #1C3A2B; }
+.title { font-size: clamp(28px, 4vw, 42px); font-weight: 700; color: #141414; letter-spacing: -1px; margin-bottom: 8px; }
+.updated { font-size: 13px; color: #888; margin-bottom: 48px; }
+.section { margin-bottom: 32px; }
+.section h2 { font-size: 18px; font-weight: 700; color: #1C3A2B; margin-bottom: 12px; }
+.section p, .section li { font-size: 15px; font-weight: 300; color: #444; line-height: 1.8; margin-bottom: 8px; }
+.section ul { padding-left: 20px; margin-bottom: 12px; }
+.section a { color: #2E5C42; }
