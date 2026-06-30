@@ -45,6 +45,12 @@
 
 /* Mobil: zaten tek kolon, sadece padding */
 @media (max-width: 560px) {
-  .main { padding: 40px 20px 32px; }
-  .bottom { flex-direction: column; align-items: flex-start; gap: 8px; padding: 16px 20px; }
+  .main { padding: 40px 20px 32px; text-align: center; }
+  .brand { align-items: center; }
+  .links { align-items: center; }
+  .linksRow { justify-content: center; }
+  .contactRows { align-items: center; }
+  .contactRow { justify-content: center; }
+  .bottom { flex-direction: column; align-items: center; text-align: center; gap: 8px; padding: 16px 20px; }
+  .legal { justify-content: center; }
 }
