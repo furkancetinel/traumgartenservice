@@ -33,7 +33,7 @@ export async function POST(req: NextRequest) {
 <head><meta charset="UTF-8"><style>
   body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #f5f0e8; margin: 0; padding: 0; }
   .wrap { max-width: 600px; margin: 40px auto; background: #fff; border-radius: 16px; overflow: hidden; }
-  .hdr { background: #1C3A2B; padding: 32px 40px; }
+  .hdr { background: #1C3A2B; padding: 32px 40px; text-align: center; }
   .hdr h1 { color: #fff; font-size: 22px; margin: 0; }
   .hdr span { color: #8FAF7E; }
   .body { padding: 36px 40px; }
@@ -46,7 +46,7 @@ export async function POST(req: NextRequest) {
 </style></head>
 <body>
 <div class="wrap">
-  <div class="hdr"><img src="https://traum-gartenservice.at/images/logo-email.png" alt="TraumGartenservice" width="180" height="38" style="display:block;"/></div>
+  <div class="hdr"><img src="https://traum-gartenservice.at/images/logo-email.png" alt="TraumGartenservice" width="180" height="38" style="display:block;margin:0 auto;"/></div>
   <div class="body">
     <h2 style="font-size:18px;color:#1C3A2B;margin:0 0 24px;">Neue Anfrage über das Kontaktformular</h2>
     <div class="row"><div class="lbl">Name</div><div class="val">${vorname} ${nachname}</div></div>
@@ -78,7 +78,7 @@ export async function POST(req: NextRequest) {
 <html lang="de"><head><meta charset="UTF-8"><style>
   body{font-family:Arial,sans-serif;background:#f5f0e8;margin:0;padding:0;}
   .wrap{max-width:600px;margin:40px auto;background:#fff;border-radius:16px;overflow:hidden;}
-  .hdr{background:#1C3A2B;padding:32px 40px;}
+  .hdr{background:#1C3A2B;padding:32px 40px;text-align:center;}
   .hdr h1{color:#fff;font-size:20px;margin:0;}
   .hdr span{color:#8FAF7E;}
   .body{padding:36px 40px;font-size:15px;color:#141414;line-height:1.75;}
@@ -87,7 +87,7 @@ export async function POST(req: NextRequest) {
 </style></head>
 <body>
 <div class="wrap">
-  <div class="hdr"><img src="https://traum-gartenservice.at/images/logo-email.png" alt="TraumGartenservice" width="180" height="38" style="display:block;"/></div>
+  <div class="hdr"><img src="https://traum-gartenservice.at/images/logo-email.png" alt="TraumGartenservice" width="180" height="38" style="display:block;margin:0 auto;"/></div>
   <div class="body">
     <p>Guten Tag ${vorname},</p>
     <p>vielen Dank für Ihre Anfrage! Wir haben Ihre Nachricht erhalten und melden uns in Kürze bei Ihnen.</p>
