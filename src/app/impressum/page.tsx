@@ -71,6 +71,7 @@ export default function Impressum() {
           </p>
         </div>
       </div>
+    </div>
       <Footer />
     </>
   )
